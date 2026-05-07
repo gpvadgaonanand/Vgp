@@ -6,53 +6,70 @@
 
 <title>Vadgaon Anand Gram Panchayat</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
 <style>
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:Arial,sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-font-family:'Segoe UI',sans-serif;
-background:#f5f7fa;
+background:#f4f4f4;
 color:#222;
 }
 
-/* NAVBAR */
+/* HEADER */
 
-.navbar{
-background:#0b3d2e;
-padding:15px 0;
+header{
+background:#065f46;
+color:white;
+padding:18px 20px;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,0.2);
 }
 
-.navbar-brand{
+header h1{
+text-align:center;
+font-size:2rem;
+margin-bottom:10px;
+}
+
+nav{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
 font-weight:bold;
-font-size:1.2rem;
-color:white !important;
+font-size:1rem;
 }
 
-.nav-link{
-color:white !important;
-margin-left:15px;
+nav a:hover{
+color:#d1fae5;
 }
 
 /* HERO */
 
 .hero{
-height:100vh;
+height:55vh;
+width:100%;
 
 background:
-linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
-url('landing bg.png');
+linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+url('./landing bg.png');
 
-background-size:contain;
+background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
-background-color:#000;
 
 display:flex;
 justify-content:center;
@@ -63,123 +80,205 @@ color:white;
 padding:20px;
 }
 
+.hero-content{
+max-width:900px;
+}
+
 .hero-content h1{
-font-size:4rem;
-font-weight:bold;
+font-size:2.8rem;
 margin-bottom:20px;
+text-shadow:0 4px 15px rgba(0,0,0,0.6);
 }
 
 .hero-content p{
-font-size:1.3rem;
-max-width:700px;
-margin:auto;
+font-size:1.1rem;
+line-height:1.7;
+text-shadow:0 2px 10px rgba(0,0,0,0.5);
 }
 
 /* SECTION */
 
-.section{
-padding:80px 0;
+section{
+padding:70px 20px;
 }
 
 .section-title{
 text-align:center;
+font-size:2.3rem;
 margin-bottom:50px;
+color:#065f46;
+position:relative;
 }
 
-.section-title h2{
-font-size:2.5rem;
-font-weight:bold;
-color:#0b3d2e;
+.section-title::after{
+content:"";
+width:120px;
+height:4px;
+background:#999;
+display:block;
+margin:15px auto;
+border-radius:10px;
 }
 
 /* ABOUT */
 
-.about img{
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,0.2);
+.about{
+max-width:1100px;
+margin:auto;
+text-align:center;
+font-size:1.1rem;
+line-height:1.9;
 }
 
 /* STATS */
 
 .stats{
-background:#0b3d2e;
+background:#0f4c75;
 color:white;
-}
-
-.stats-box{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:30px;
 text-align:center;
-padding:20px;
 }
 
-.stats-box h3{
+.stat-box h2{
 font-size:2.5rem;
-font-weight:bold;
+margin-bottom:10px;
 }
 
-/* CARDS */
+.stat-box p{
+font-size:1.1rem;
+}
 
-.card{
-border:none;
+/* SERVICES */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+max-width:1200px;
+margin:auto;
+}
+
+.service-card{
+background:white;
+padding:30px;
 border-radius:15px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
 transition:0.3s;
+text-align:center;
 }
 
-.card:hover{
-transform:translateY(-5px);
+.service-card:hover{
+transform:translateY(-8px);
 }
 
-.card img{
-height:250px;
-object-fit:cover;
+.service-card h3{
+margin-bottom:15px;
+color:#065f46;
 }
 
 /* GALLERY */
 
-.gallery img{
-width:100%;
-height:300px;
-object-fit:cover;
-border-radius:15px;
-transition:0.3s;
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
 }
 
-.gallery img:hover{
-transform:scale(1.03);
+.gallery-item{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 4px 15px rgba(0,0,0,0.12);
+}
+
+.gallery-item img{
+width:100%;
+height:220px;
+object-fit:cover;
+display:block;
+}
+
+.gallery-item h4{
+padding:15px;
+text-align:center;
+font-size:1rem;
 }
 
 /* CONTACT */
 
-.contact-box{
-background:white;
-padding:40px;
-border-radius:20px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+.contact{
+max-width:700px;
+margin:auto;
+}
+
+.contact form{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.contact input,
+.contact textarea{
+padding:15px;
+border:1px solid #ccc;
+border-radius:10px;
+font-size:1rem;
+}
+
+.contact button{
+padding:15px;
+background:#065f46;
+color:white;
+border:none;
+border-radius:10px;
+font-size:1rem;
+cursor:pointer;
+}
+
+.contact button:hover{
+background:#047857;
 }
 
 /* FOOTER */
 
 footer{
-background:#111;
+background:#111827;
 color:white;
 text-align:center;
-padding:30px;
+padding:25px;
+margin-top:40px;
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
 
+header h1{
+font-size:1.5rem;
+}
+
+nav{
+gap:15px;
+}
+
+.hero{
+height:350px;
+}
+
 .hero-content h1{
-font-size:2.2rem;
+font-size:2.3rem;
+line-height:1.2;
 }
 
 .hero-content p{
 font-size:1rem;
 }
 
-.section-title h2{
+.section-title{
 font-size:2rem;
 }
 
@@ -190,51 +289,19 @@ font-size:2rem;
 
 <body>
 
-<!-- NAVBAR -->
+<header>
 
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<h1>Vadgaon Anand Gram Panchayat</h1>
 
-<div class="container">
-
-<a class="navbar-brand" href="#">
-Vadgaon Anand Gram Panchayat
-</a>
-
-<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navmenu">
-<span class="navbar-toggler-icon"></span>
-</button>
-
-<div class="collapse navbar-collapse" id="navmenu">
-
-<ul class="navbar-nav ms-auto">
-
-<li class="nav-item">
-<a class="nav-link" href="#about">About</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#services">Services</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#gallery">Gallery</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#schemes">Schemes</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="#contact">Contact</a>
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
+<nav>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#gallery">Highlights</a>
+<a href="#schemes">Schemes</a>
+<a href="#contact">Contact</a>
 </nav>
+
+</header>
 
 <!-- HERO -->
 
@@ -256,45 +323,26 @@ Dedicated towards transparency, smart governance and rural development.
 
 <!-- ABOUT -->
 
-<section id="about" class="section about">
+<section id="about">
 
-<div class="container">
+<h2 class="section-title">About Gram Panchayat</h2>
 
-<div class="section-title">
-<h2>About Village</h2>
-</div>
-
-<div class="row align-items-center g-5">
-
-<div class="col-md-6">
-
-<img src="heritage.jpg" class="img-fluid">
-
-</div>
-
-<div class="col-md-6">
-
-<h3 class="mb-4">Heritage & Development</h3>
+<div class="about">
 
 <p>
-Vadgaon Anand is a culturally rich village situated in Junnar Taluka of Pune District.
-The village is known for its heritage temples, peaceful environment,
-community participation and progressive rural development initiatives.
+Vadgaon Anand Gram Panchayat is a progressive local governing body in
+Junnar Taluka, Pune district.
+The Panchayat focuses on rural development, sanitation, digital governance,
+citizen welfare and infrastructure development.
 </p>
+
+<br>
 
 <p>
-The Gram Panchayat actively works for sanitation, transparency,
-government scheme awareness, digital governance and public welfare.
+The village is known for its cultural heritage, temples,
+public welfare schemes and active participation in social development.
+The Gram Panchayat continuously works towards building a smart and sustainable village.
 </p>
-
-<p>
-The village represents a blend of tradition and modern development,
-making it an ideal example of smart village transformation.
-</p>
-
-</div>
-
-</div>
 
 </div>
 
@@ -302,235 +350,116 @@ making it an ideal example of smart village transformation.
 
 <!-- STATS -->
 
-<section class="section stats">
+<section class="stats">
 
-<div class="container">
-
-<div class="row">
-
-<div class="col-md-3">
-<div class="stats-box">
-<h3>2484+</h3>
+<div class="stat-box">
+<h2>2484</h2>
 <p>Population</p>
 </div>
-</div>
 
-<div class="col-md-3">
-<div class="stats-box">
-<h3>568+</h3>
+<div class="stat-box">
+<h2>568</h2>
 <p>Families</p>
 </div>
-</div>
 
-<div class="col-md-3">
-<div class="stats-box">
-<h3>80%</h3>
+<div class="stat-box">
+<h2>80%</h2>
 <p>Literacy</p>
 </div>
-</div>
 
-<div class="col-md-3">
-<div class="stats-box">
-<h3>100%</h3>
-<p>Village Participation</p>
-</div>
-</div>
-
-</div>
-
+<div class="stat-box">
+<h2>512 Ha</h2>
+<p>Area</p>
 </div>
 
 </section>
 
 <!-- SERVICES -->
 
-<section id="services" class="section">
+<section id="services">
 
-<div class="container">
+<h2 class="section-title">Citizen Services</h2>
 
-<div class="section-title">
-<h2>Citizen Services</h2>
-</div>
+<div class="services">
 
-<div class="row g-4">
-
-<div class="col-md-4">
-
-<div class="card p-4 text-center">
-
-<h4>Government Schemes</h4>
-
+<div class="service-card">
+<h3>Complaint Portal</h3>
 <p>
-Information regarding welfare schemes,
-employment schemes and development initiatives.
+Register complaints related to roads, water supply, sanitation and electricity.
 </p>
-
 </div>
 
-</div>
-
-<div class="col-md-4">
-
-<div class="card p-4 text-center">
-
-<h4>Village Development</h4>
-
+<div class="service-card">
+<h3>Government Notices</h3>
 <p>
-Road development, cleanliness,
-water facilities and rural infrastructure projects.
+Important announcements and public information from Gram Panchayat.
 </p>
-
 </div>
 
-</div>
-
-<div class="col-md-4">
-
-<div class="card p-4 text-center">
-
-<h4>Digital Governance</h4>
-
+<div class="service-card">
+<h3>Village Updates</h3>
 <p>
-Transparency, digital information sharing
-and public awareness initiatives.
+Stay updated with village activities and development initiatives.
 </p>
-
-</div>
-
-</div>
-
 </div>
 
 </div>
 
 </section>
 
-<!-- GALLERY -->
+<!-- VILLAGE HIGHLIGHTS -->
 
-<section id="gallery" class="section bg-light">
+<section id="gallery">
 
-<div class="container">
+<h2 class="section-title">Village Highlights</h2>
 
-<div class="section-title">
-<h2>Village Gallery</h2>
+<div class="gallery">
+
+<div class="gallery-item">
+<img src="./heritage.jpg">
+<h4>Village Heritage Gate</h4>
 </div>
 
-<div class="row g-4 gallery">
-
-<div class="col-md-6">
-<img src="IMG-20260505-WA0010.jpg">
+<div class="gallery-item">
+<img src="./IMG-20260505-WA0012.jpg">
+<h4>Gram Sansad Bhavan</h4>
 </div>
 
-<div class="col-md-6">
-<img src="IMG-20260505-WA0011.jpg">
-</div>
-
-<div class="col-md-6">
-<img src="IMG-20260505-WA0012.jpg">
-</div>
-
-<div class="col-md-6">
-<img src="heritage.jpg">
-</div>
-
+<div class="gallery-item">
+<img src="./IMG-20260505-WA0010.jpg">
+<h4>Village Temple</h4>
 </div>
 
 </div>
 
 </section>
 
-<!-- SCHEMES -->
+<!-- GOVERNMENT SCHEMES -->
 
-<section id="schemes" class="section">
+<section id="schemes">
 
-<div class="container">
+<h2 class="section-title">Government Schemes & Information</h2>
 
-<div class="section-title">
-<h2>Government Schemes & Information Boards</h2>
+<div class="gallery">
+
+<div class="gallery-item">
+<img src="./IMG-20260507-WA0013.jpg">
+<h4>Government Scheme Information</h4>
 </div>
 
-<div class="row g-4">
-
-<div class="col-md-6">
-
-<div class="card">
-
-<img src="IMG-20260507-WA0013.jpg">
-
-<div class="card-body">
-
-<h5>Women & Child Welfare Schemes</h5>
-
-<p>
-Public information regarding welfare and support schemes.
-</p>
-
+<div class="gallery-item">
+<img src="./IMG-20260507-WA0014.jpg">
+<h4>Village Welfare Scheme</h4>
 </div>
 
+<div class="gallery-item">
+<img src="./IMG-20260507-WA0015.jpg">
+<h4>Citizen Development Scheme</h4>
 </div>
 
-</div>
-
-<div class="col-md-6">
-
-<div class="card">
-
-<img src="IMG-20260507-WA0014.jpg">
-
-<div class="card-body">
-
-<h5>Employment & Rural Development Schemes</h5>
-
-<p>
-Village employment and rural development awareness programs.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="col-md-6">
-
-<div class="card">
-
-<img src="IMG-20260507-WA0015.jpg">
-
-<div class="card-body">
-
-<h5>Social Welfare Information</h5>
-
-<p>
-Information regarding social welfare and public development schemes.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="col-md-6">
-
-<div class="card">
-
-<img src="IMG-20260507-WA0016.jpg">
-
-<div class="card-body">
-
-<h5>Transparency Board</h5>
-
-<p>
-Transparency and citizen information display board.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
+<div class="gallery-item">
+<img src="./IMG-20260507-WA0016.jpg">
+<h4>Public Information Board</h4>
 </div>
 
 </div>
@@ -539,66 +468,23 @@ Transparency and citizen information display board.
 
 <!-- CONTACT -->
 
-<section id="contact" class="section bg-light">
+<section id="contact">
 
-<div class="container">
+<h2 class="section-title">Contact Vadgaon Anand Gram Panchayat</h2>
 
-<div class="section-title">
-<h2>Contact Gram Panchayat</h2>
-</div>
-
-<div class="row justify-content-center">
-
-<div class="col-md-8">
-
-<div class="contact-box">
+<div class="contact">
 
 <form>
 
-<div class="mb-3">
-<input type="text" class="form-control" placeholder="Your Name">
-</div>
+<input type="text" placeholder="Name">
 
-<div class="mb-3">
-<input type="text" class="form-control" placeholder="Mobile Number">
-</div>
+<input type="text" placeholder="Mobile Number">
 
-<div class="mb-3">
-<textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
-</div>
+<textarea rows="5" placeholder="Your Message"></textarea>
 
-<button class="btn btn-success">
-Submit
-</button>
+<button type="submit">Send Message</button>
 
 </form>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- MAP -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="section-title">
-<h2>Village Location</h2>
-</div>
-
-<iframe
-src="https://maps.google.com/maps?q=Vadgaon%20Anand&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%"
-height="400"
-style="border:0;border-radius:15px;">
-</iframe>
 
 </div>
 
@@ -608,23 +494,11 @@ style="border:0;border-radius:15px;">
 
 <footer>
 
-<h4>Vadgaon Anand Gram Panchayat</h4>
-
 <p>
-Taluka Junnar | District Pune | Maharashtra
-</p>
-
-<p>
-Digital Village Initiative | Government of Maharashtra
-</p>
-
-<p>
-© 2026 All Rights Reserved
+© 2026 Vadgaon Anand Gram Panchayat | Junnar, Pune, Maharashtra
 </p>
 
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
-</html>
+  </html>
